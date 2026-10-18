@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Dashboard</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #74ebd5, #ACB6E5);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    h2 {
+        color: #fff;
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 2em;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .dashboard-options {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        width: 90%;
+        max-width: 900px;
+    }
+
+    .dashboard-options a {
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        padding: 15px;
+        text-align: center;
+        font-size: 1.1em;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .dashboard-options a:hover {
+        background-color: #0056b3;
+        transform: translateY(-5px);
+        box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+    }
+
+    @media (max-width: 600px) {
+        h2 {
+            font-size: 1.5em;
+        }
+
+        .dashboard-options a {
+            font-size: 1em;
+            padding: 12px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<h2>Welcome, <span th:text="${customerType}"></span>!</h2>
+
+<div class="dashboard-options">
+    <a th:href="@{/customer/viewApartments}">1. View Available Apartments</a>
+    <a th:href="@{/customer/search}">2. Search by Location or Price</a>
+    <a th:href="@{/customer/bookAppointment}">3. Book Appointment</a>
+    <a th:href="@{/customer/makePayment}">4. Make Payment & Booking</a>
+    <a th:href="@{/customer/chat}">5. Chat with Land Seller or Manager</a>
+    <a th:href="@{/customer/trackBooking}">6. Track Booking Status</a>
+    <a th:href="@{/customer/interiorDesign}">7. Interior Design</a>
+</div>
+
+</body>
+</html>

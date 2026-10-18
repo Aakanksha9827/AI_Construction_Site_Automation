@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/manager.css}">
+</head>
+<body>
+
+    <form th:object="${managerModel}" method="post" th:action="@{/subManager}">
+         <h1>Personal Information Of Manager</h1>
+         <br><br>
+	
+         <label>Name : <input type="text" placeholder="Enter your name."  th:field="*{name}"></label>
+         <label>Email : <input type="email" placeholder="Enter registered email."  th:field="*{email}"></label>
+         <label>Mobile No. : <input type="text" placeholder="Enter your mobile number."  th:field="*{mobileNumber}"></label>
+         <label>Experience : <input type="number" placeholder="Enter your experience in years"  th:field="*{experience}"></label>
+         <label>Previous Project : <input type="text" placeholder="Enter previous project."  th:field="*{prevProject}"></label>
+         <label>Expected Salary : <input type="number" placeholder="Enter expected salary."  th:field="*{expectedSalary}"></label>
+         <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

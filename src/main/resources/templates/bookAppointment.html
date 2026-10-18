@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Book Appointment</title>
+<style>
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    h2 {
+        text-align: center;
+        font-size: 2em;
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 30px;
+        text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+    form {
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        width: 350px;
+    }
+    label {
+        font-weight: bold;
+        margin-bottom: 5px;
+        margin-top: 15px;
+    }
+    input, textarea, select {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 1em;
+        outline: none;
+        width: 100%;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+    }
+    input:focus, textarea:focus, select:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 5px rgba(0,123,255,0.5);
+    }
+    textarea {
+        resize: none;
+        height: 80px;
+    }
+    button {
+        margin-top: 25px;
+        padding: 12px;
+        background-color: #007bff;
+        color: white;
+        font-size: 1em;
+        font-weight: bold;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    button:hover {
+        background-color: #0056b3;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    }
+    .message {
+        text-align: center;
+        margin-top: 15px;
+        color: green;
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+<div>
+    <h2>Book Appointment</h2>
+    <form th:action="@{/customer/bookAppointment}" th:object="${appointment}" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" th:field="*{name}" placeholder="Your Name" required>
+
+        <label for="date">Date</label>
+        <input type="date" id="date" th:field="*{date}" required>
+
+        <label for="time">Time</label>
+        <input type="time" id="time" th:field="*{time}" required>
+
+        <label for="place">Place</label>
+        <input type="text" id="place" th:field="*{place}" placeholder="Meeting Place" required>
+
+        <label for="reason">Reason</label>
+        <textarea id="reason" th:field="*{reason}" placeholder="Reason for Appointment" required></textarea>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+    <div class="message" th:text="${message}"></div>
+</div>
+
+</body>
+</html>

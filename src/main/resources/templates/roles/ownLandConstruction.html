@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/ownLandConstruction.css}">
+</head>
+<body>
+
+     <form th:object="${ownLandConstructionModel}" th:method="post" th:action="@{/subOwnLandConstruction}">
+     
+          <h1>Personal Information of cutomer wants to build house with own land</h1>
+        
+           <label>Name :<input type="text" placeholder="Enter Your name" th:field="*{name}"></label>
+           <label>Email :<input type="email" placeholder="Enter Your registred Email" th:field="*{email}"></label>
+           <label>Mobile Number :<input type="number" placeholder="Enter your mobile number" th:field="*{mobileNum}"></label>
+           <label>BHK :<input type="number" placeholder="Enter your land location" th:field="*{BHK}"></label>
+           <label>Location :<input type="text" placeholder="Enter Land location" th:field="*{location}"></label>
+          
+           <button type="submit">Submit</button>
+     
+     </form>
+</body>
+</html>

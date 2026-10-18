@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"></link>
+
+</head>
+<body>
+        <table class="table table-striped table-responsive-md border">
+         	<thead class="table-danger">
+				<tr>
+				<h1 class="text-center mb-4 text-primary">The list of customers want's to construct building on own land</h1>
+					<th>Serial Number</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th>Mobile Number</th>
+					<th>Land Size</th>
+					<th>BHK</th>
+					<th>Location</th>
+					<th>Actions</th>
+					
+					</tr>
+			</thead>
+			
+			<tbody>
+			   <tr th:each="enq, stat: ${all}">
+			     <td><span th:text="${stat.index + 1}"></span></td>
+			     <td><span th:text="${enq.name}"></span></td>
+			     <td><span th:text="${enq.email}"></span></td>
+			     <td><span th:text="${enq.mobileNum}"></span></td>
+			     <td><span th:text="${enq.landSize}"></span></td>
+			     <td><span th:text="${enq.BHK}"></span></td>
+			     <td><span th:text="${enq.location}"></span></td>
+			     <td>
+    <a  th:href="@{'/admin/allocate/' + ${enq.id} + '/' + ${entityType}}"
+        class="btn btn-success btn-sm">
+        Allocate
+    </a>
+
+    <a th:href="@{'/admin/reject/' + ${enq.id} + '/' + ${entityType}}"
+       class="btn btn-danger btn-sm"
+       onclick="return confirm('Are you sure you want to reject this record?');">
+       Reject
+    </a>
+</td>
+			     
+			   </tr>			   
+			</tbody>
+         </table>
+</body>
+</html>

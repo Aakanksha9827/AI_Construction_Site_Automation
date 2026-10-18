@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/register.css}">
+</head>
+<body>
+   
+   <form th:object="${registrationModel}" th:action="@{/register}" method="post" class="Registration">
+   
+       <h1>REGISTER</h1>
+       
+       
+       <label>Name : </label>
+       <input type="text" placeholder="Enter Your name" th:field="*{name}">
+       
+       <label>Email : </label>
+       <input type="email" placeholder="Enter valid email"th:field="*{email}">
+       
+       <label>password : </label>
+       <input type="password" placeholder="Enter Strong password" th:field="*{password}">
+       
+       <label>confirmPassword : </label>
+       <input type="password" placeholder="Confirm password" th:field="*{confirmPassword}">
+       
+       <label>Country : </label>
+       <input type="text" placeholder="Enter Your Country name" th:field="*{country}">
+       
+       <label>phoneNumber : </label>
+       <input type="text" placeholder="Enter Your phone number" th:field="*{phoneNumber}">
+       
+       <label>Select Experties : <select th:field="*{role}">
+               <option value="" disabled selected>-- Select Expertise --</option>
+               <option value="Land Seller">Land Seller</option>
+               <option value="Labour">Labour</option>
+               <option value="Engineer">Engineer</option>
+               <option value="Manager">Manager</option>
+               <option value="Customer_BHK_Flat">Customer_BHK_Flat</option>
+               <option value="Customer_Building_House">Customer_Building_House</option>
+               <option value="Commercial_Project">Commercial_Project</option>
+       </select></label>
+       <button type="submit" class="button">Submit</button>
+   </form>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 30px;
+            color: #333;
+        }
+
+        nav {
+            background-color: #004085;
+            padding: 12px 0;
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            margin: 8px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 18px;
+            background-color: #0069d9;
+            border-radius: 6px;
+            font-size: 15px;
+            transition: 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #0053aa;
+            transform: scale(1.07);
+        }
+
+        nav ul li a:active {
+            background-color: #003f88;
+        }
+    </style>
+    
+</head>
+<body>
+
+<h2>Welcome to Dashboard</h2>
+
+<nav>
+    <ul>
+        <li><a th:href="@{/landSellerForm}">Land Seller</a></li>
+        <li><a th:href="@{/labourForm}">Labour</a></li>
+        <li><a th:href="@{/engineerForm}">Engineer</a></li>
+        <li><a th:href="@{/managerForm}">Manager</a></li>
+        <li><a th:href="@{/apartmentBuyersForm}">Apartment Buyer</a></li>
+        <li><a th:href="@{/ownLandConstructionForm}">House Construction</a></li>
+        <li><a th:href="@{/landAndHouseBuilderForm}">Commercial Projects</a></li>
+    </ul>
+</nav>
+
+</body>
+</html>

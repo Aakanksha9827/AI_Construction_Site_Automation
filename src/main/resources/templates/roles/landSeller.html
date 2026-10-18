@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/landSeller.css}">
+
+</head>
+
+<body>
+
+    <form th:object="${landSellerModel}" th:method="post" th:action="@{/subLandSeller}">
+        <h1>Personal Information Of Land Seller</h1>
+        
+           <label>Name :<input type="text" placeholder="Enter Your name" th:field="*{name}"></label>
+           <label>Email :<input type="email" placeholder="Enter Your registred Email" th:field="*{email}"></label>
+           <label>Mobile Number :<input type="number" placeholder="Enter your mobile number" th:field="*{mobileNum}"></label>
+           <label>Land Location :<input type="text" placeholder="Enter your land location" th:field="*{landLocation}"></label>
+           <label>Land Size SQFoot :<input type="number" placeholder="Enter Land size in SQ foot" th:field="*{landSizeSQFoot}"></label>
+           <label>Land Price :<input type="number" placeholder="Enter Land price" th:field="*{price}"></label>
+           <label>verification Docs :<input type="text" placeholder="Enter documents" th:field="*{verificationDocs}"></label>
+           <label>RERE :<input type="text" placeholder="Enter RERA law" th:field="*{RERA}"></label>
+           
+           <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

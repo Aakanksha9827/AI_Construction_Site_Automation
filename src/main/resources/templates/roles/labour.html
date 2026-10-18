@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/labour.css}">
+</head>
+
+<body>
+
+     <form th:object="${labourModel}" th:method="post" th:action="@{/subLabour}">
+           <h1>Personal Information Of labour</h1>
+           
+           <label>Name :<input type="text" placeholder="Enter Your name" th:field="*{name}"></label>
+           <label>Email :<input type="email" placeholder="Enter Your registred Email" th:field="*{email}"></label>
+           <label>Mobile Number :<input type="number" placeholder="Enter your mobile number" th:field="*{mobileNumber}"></label>
+           <label>Experience :<input type="text" placeholder="Enter your experience" th:field="*{experience}"></label>
+           <label>Previous Project :<input type="text" placeholder="Enter previous project information" th:field="*{prevProject}"></label>
+           <label>Expected Salary :<input type="number" placeholder="Enter expected salary" th:field="*{expectedSalary}"></label>
+           <label>Experties :<input type="text" placeholder="Enter your experties" th:field="*{experties}"></label>
+           <label>Skills :<input type="text" placeholder="Enter the skills you have" th:field="*{skills}"></label>
+           
+           <button type="submit">Submit</button>
+     </form>
+</body>
+</html>

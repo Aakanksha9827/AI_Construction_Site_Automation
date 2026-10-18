@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h2 class="text-center text-primary mb-4">🏗️ Construction Management - Admin Panel</h2>
+        <p class="text-center mb-5">Select a category to view all records.</p>
+
+        <div class="row justify-content-center">
+
+            <!-- Engineer Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/engineers" class="btn btn-outline-primary btn-block btn-lg">👷‍♂️ Engineers</a>
+            </div>
+
+            <!-- Manager Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/managers" class="btn btn-outline-success btn-block btn-lg">👨‍💼 Managers</a>
+            </div>
+
+            <!-- Labour Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/labours" class="btn btn-outline-danger btn-block btn-lg">👷‍♀️ Labours</a>
+            </div>
+
+            <!-- Land Seller Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/landSeller" class="btn btn-outline-warning btn-block btn-lg">🌍 Land Sellers</a>
+            </div>
+
+            <!-- Apartment Buyers Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/apartmentBuyers" class="btn btn-outline-info btn-block btn-lg">🏢 Apartment Buyers</a>
+            </div>
+
+            <!-- Own Land Construction Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/ownLandConstruction" class="btn btn-outline-secondary btn-block btn-lg">🏠 Own Land Construction</a>
+            </div>
+
+            <!-- Land & House Builder Button -->
+            <div class="col-md-3 mb-3">
+                <a href="/admin/landAndHouseBuilders" class="btn btn-outline-dark btn-block btn-lg">🏗️ Land & House Builders</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

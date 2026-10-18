@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" th:href="@{/css/apartmentBuyers.css}">
+<link >
+</head>
+<body>
+
+      <form th:object="${apartmentBuyersModel}" th:method="post" th:action="@{/subApartmentBuyers}">
+     
+          <h1>Personal Information Of Apartment Buyer</h1>
+        
+           <label>Name :<input type="text" placeholder="Enter Your name" th:field="*{name}"></label>
+           <label>Email :<input type="email" placeholder="Enter Your registred Email" th:field="*{email}"></label>
+           <label>Mobile Number :<input type="number" placeholder="Enter your mobile number" th:field="*{mobileNum}"></label>
+           <label>Land Size :<input type="number" placeholder="Size of the land you want to purchase" th:field="*{landSize}"></label>
+           <label>BHK :<input type="number" placeholder="Enter your land location" th:field="*{BHK}"></label>
+           <label>Location :<input type="text" placeholder="Enter Land location" th:field="*{location}"></label>
+          
+           <button type="submit">Submit</button>
+     
+     </form>
+</body>
+</html>
